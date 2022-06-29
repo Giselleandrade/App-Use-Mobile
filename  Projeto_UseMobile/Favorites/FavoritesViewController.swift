@@ -44,10 +44,10 @@ class FavoritesViewController: UIViewController {
        
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        
-        navigationController?.navigationBar.topItem?.title = ""
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        
+//        navigationController?.navigationBar.topItem?.title = ""
+//    }
     
     
     private func configuraTableView() {

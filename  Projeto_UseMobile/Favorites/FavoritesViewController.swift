@@ -15,22 +15,20 @@ class FavoritesViewController: UIViewController {
     
     @IBOutlet weak var favoriteTableView: UITableView!
     
-    // o ViewDidLoad não ta mudando porque a tela já foi carregada na memória, por isso eu coloco no Willappear. porque toda vez que chamar ele aparece.
-    // Exemplo para ententer o viewDidLoad e ViewWillAppear
     
     override func viewDidLoad() {
         
         configuraTableView()
-
+        
         print("ViewDidLoad")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         loadFavorites()
-       
         
-        // Exemplo para ententer o viewDidLoad e ViewWillAppear
+        
+        
         print("viewWillAppear")
         
         navigationController?.navigationBar.tintColor = UIColor(red: 0.27, green: 0.733, blue: 0.938, alpha: 1)
@@ -38,16 +36,11 @@ class FavoritesViewController: UIViewController {
         navigationController?.navigationBar.topItem?.title = "Favorites"
         
         
-        // carregar os itens da tableView
+        
         favoriteTableView.reloadData()
         
-       
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        
-//        navigationController?.navigationBar.topItem?.title = ""
-//    }
     
     
     private func configuraTableView() {
@@ -58,7 +51,6 @@ class FavoritesViewController: UIViewController {
         
     }
     
-    // Está pegando o valor atrelado com a chave e está atribuindo a um novo array. No caso só as informações favoritadas.
     
     func loadFavorites() {
         favoritesArray = userDefaults.value(forKey: "favoritesArray") as? [[String: Any]] ?? [[:]]
@@ -78,8 +70,8 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
         cell.titleLabel?.text = favoritesArray[indexPath.row]["name"] as? String
         cell.descriptionLabel.text = favoritesArray[indexPath.row]["description"] as? String
         cell.loadImage(image: favoritesArray[indexPath.row]["image"] as? String ?? "fotoBranca")
-        cell.setupUI() // atualizando a estrelinha aqui na viewController
-    
+        cell.setupUI()
+        
         return cell
     }
     

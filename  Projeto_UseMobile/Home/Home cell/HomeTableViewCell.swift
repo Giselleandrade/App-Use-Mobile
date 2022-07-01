@@ -67,6 +67,7 @@ class HomeTableViewCell: UITableViewCell {
     }
     
     private func saveFavorites() {
+        
         guard let name = nameLabel.text, let description = descriptionLabel.text else { return }
         favoritesArray = userDefaults.value(forKey: "favoritesArray") as? [[String: Any]] ?? []
         favoritesDict = ["name": name, "description": description, "image": imageString]

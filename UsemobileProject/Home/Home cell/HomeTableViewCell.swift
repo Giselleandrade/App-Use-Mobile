@@ -1,6 +1,6 @@
 //
 //  HomeTableViewCell.swift
-//  Projeto_UseMobile
+//  UsemobileProject
 //
 //  Created by Giselle Andrade on 29/06/22.
 //
@@ -11,34 +11,34 @@ class HomeTableViewCell: UITableViewCell {
     
     var isFavorited: Bool = false
     
-    
+    // Isso é pra fechar o aplicativo e manter as mudanças no app
     
     private let userDefaults = UserDefaults.standard
     private var favoritesDict: [String: Any] = [:]
     private var favoritesArray: [[String: Any]] = []
     private var imageString: String?
-    
+
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var animalImage: UIImageView!
     
     override func awakeFromNib() {
-        super.awakeFromNib()
+        super.awakeFromNib()   // É o viewDidLoad de uma view. Porque viewDidLoad é só da controller
         
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         
         super.setSelected(selected, animated: animated)
-        
-        
+
+       
     }
     
     @IBAction func favoriteButton(_ sender: Any){
         if isFavorited {
             buttonStarNoColor()
-            removeFavorites()
+             removeFavorites()
             
             
             
@@ -47,10 +47,10 @@ class HomeTableViewCell: UITableViewCell {
             saveFavorites()
         }
     }
-    
-    
-    private func buttonStarColor() {
         
+       
+    private func buttonStarColor() {
+
         guard let imageColor: UIImage = UIImage(named: "Vector") else { return }
         
         favoriteButton.setImage(imageColor, for: .normal)
@@ -59,7 +59,7 @@ class HomeTableViewCell: UITableViewCell {
     }
     
     private func buttonStarNoColor() {
-        
+
         guard let imageNoColor: UIImage = UIImage(named: "Vector-2") else { return }
         
         favoriteButton.setImage(imageNoColor, for: .normal)
@@ -67,12 +67,12 @@ class HomeTableViewCell: UITableViewCell {
     }
     
     private func saveFavorites() {
-        
         guard let name = nameLabel.text, let description = descriptionLabel.text else { return }
         favoritesArray = userDefaults.value(forKey: "favoritesArray") as? [[String: Any]] ?? []
-        favoritesDict = ["name": name, "description": description, "image": imageString]
+        favoritesDict = ["name": name, "description": description, "image": imageString] //EStou contruindo o dicionário para salvar. Não está pegando a image
         favoritesArray.append(favoritesDict)
-        userDefaults.set(favoritesArray, forKey: "favoritesArray")
+        userDefaults.set(favoritesArray, forKey: "favoritesArray") // pra salvar mesmo os favoritos com a chave
+//        print(userDefaults.value(forKey: "favoritesArray"))
     }
     
     private func removeFavorites() {
@@ -80,13 +80,13 @@ class HomeTableViewCell: UITableViewCell {
         favoritesArray = userDefaults.value(forKey: "favoritesArray") as? [[String: Any]] ?? []
         
         favoritesArray.removeAll { name in
-            
-            return name["name"] as? String == nameLabel.text
+           
+           return name["name"] as? String == nameLabel.text
         }
         userDefaults.set(favoritesArray, forKey: "favoritesArray")
     }
     
-    
+   
     func setupUI(items: Items) {
         
         animalImage.layer.cornerRadius = 8
@@ -97,25 +97,24 @@ class HomeTableViewCell: UITableViewCell {
         guard let url = URL(string: items.image ?? "fotoBranca") else { return }
         animalImage.loadImage(url: url)
         
-        imageString = items.image
+        imageString = items.image // Salvando o endereço da imagem
         
         if verificaFavorito(items: items){
             buttonStarColor()
         } else {
             buttonStarNoColor()
         }
-        
+    
         
     }
-    
     
     
     func verificaFavorito(items: Items) -> Bool {
         
         favoritesArray = userDefaults.value(forKey: "favoritesArray") as? [[String: Any]] ?? []
         return favoritesArray.contains { name in
-            return name["name"] as? String == items.name
+        return name["name"] as? String == items.name
         }
     }
-    
+ 
 }

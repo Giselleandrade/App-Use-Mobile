@@ -1,6 +1,6 @@
 //
 //  TabBarViewController.swift
-//  Projeto_UseMobile
+//  UsemobileProject
 //
 //  Created by Giselle Andrade on 29/06/22.
 //
@@ -12,10 +12,10 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        // deveria ter uma navigation, mas não tenho
         
         setViewControllers([homeController(), addNewController(), favoritesController()], animated: true)
-        setupTabBar() 
+        setupTabBar() // pega os valores que estou passando e coloca na Tabbar. Se eu não chamar, eu não tenho nada na tabbar. E o que eu passar pra ele, é oq vai aparecer
         
     }
     private func setupTabBar() {
@@ -39,7 +39,7 @@ class TabBarViewController: UITabBarController {
         }
     }
 
-
+// só estou criando as VC
     
     private func homeController() -> UIViewController {
         let homeController = HomeViewController()

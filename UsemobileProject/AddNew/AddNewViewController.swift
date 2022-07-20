@@ -36,14 +36,14 @@ class AddNewViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
             navigationController?.navigationBar.tintColor = UIColor(red: 0.27, green: 0.733, blue: 0.938, alpha: 1)
             navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(red: 0.27, green: 0.733, blue: 0.938, alpha: 1)]
-            navigationController?.navigationBar.topItem?.title = "Cadastro"
+//            navigationController?.navigationBar.topItem?.title = "Cadastro"
         navigationItem.title = "Cadastro"
 
         }
-//        override func viewWillDisappear(_ animated: Bool) {
-//
-//            navigationController?.navigationBar.topItem?.title = ""
-//        }
+        override func viewWillDisappear(_ animated: Bool) {
+
+            navigationController?.navigationBar.topItem?.title = ""
+        }
     
     
     

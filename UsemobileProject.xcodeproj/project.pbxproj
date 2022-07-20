@@ -102,7 +102,7 @@
 		4CBC37A9285D61920072AA6C = {
 			isa = PBXGroup;
 			children = (
-				4CBC37B4285D61920072AA6C /*  Projeto_UseMobile */,
+				4CBC37B4285D61920072AA6C /* UsemobileProject */,
 				4CBC37B3285D61920072AA6C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,7 +115,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4CBC37B4285D61920072AA6C /*  Projeto_UseMobile */ = {
+		4CBC37B4285D61920072AA6C /* UsemobileProject */ = {
 			isa = PBXGroup;
 			children = (
 				4C21B5A8285E800500364D86 /* Model */,
@@ -131,7 +131,7 @@
 				4CBC37C3285D61930072AA6C /* Info.plist */,
 				4C4CC2BC2862BC0D00896DB7 /* Extensions.swift */,
 			);
-			path = " Projeto_UseMobile";
+			path = UsemobileProject;
 			sourceTree = "<group>";
 		};
 		4CBC37D0285D759B0072AA6C /* Home */ = {
@@ -216,7 +216,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4CBC37AD285D61920072AA6C /* Build configuration list for PBXProject "Projeto_UseMobile" */;
+			buildConfigurationList = 4CBC37AD285D61920072AA6C /* Build configuration list for PBXProject "UsemobileProject" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -461,7 +461,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4CBC37AD285D61920072AA6C /* Build configuration list for PBXProject "Projeto_UseMobile" */ = {
+		4CBC37AD285D61920072AA6C /* Build configuration list for PBXProject "UsemobileProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4CBC37C4285D61930072AA6C /* Debug */,

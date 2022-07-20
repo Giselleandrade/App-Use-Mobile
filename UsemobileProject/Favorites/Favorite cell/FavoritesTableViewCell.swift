@@ -1,6 +1,6 @@
 //
 //  FavoritesTableViewCell.swift
-//  Projeto_UseMobile
+//  UsemobileProject
 //
 //  Created by Giselle Andrade on 29/06/22.
 //
@@ -23,16 +23,16 @@ class FavoritesTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         
         super.awakeFromNib()
-        
-        
+//        setupUI()  só esta sendo chamado uma vez 
+
     }
     
     @IBAction func starButtonAction(_ sender: Any) {
-        
+
         if isFavorited {
             buttonStarNoColor()
             removeFavorites()
-            
+
         } else {
             buttonStarColor()
             saveFavorites()
@@ -47,19 +47,30 @@ class FavoritesTableViewCell: UITableViewCell {
         
     }
     private func buttonStarNoColor() {
-        
+
         guard let imageNoColor: UIImage = UIImage(named: "Vector-2") else { return }
         
         starButtonOutlet.setImage(imageNoColor, for: .normal)
         isFavorited = false
     }
     
+    // não to passando nada dessa preencher label 
     
+//    func preencherLabels(items: Items)  {
+//
+//        titleLabel.text = items.name
+//        descriptionLabel.text = items.description
+//
+//        guard let url = URL(string: items.image ?? "fotoBranca") else { return }
+//        animalImage.loadImage(url: url)
+//        imageString = items.image // atualizando a imagem
+//
+//    }
     func loadImage(image: String) {
         guard let url = URL(string: image) else { return }
         animalImage.loadImage(url: url)
         imageString = image
-        
+
     }
     
     func setupUI() {
@@ -73,8 +84,8 @@ class FavoritesTableViewCell: UITableViewCell {
         var favoritesArray = userDefaults.value(forKey: "favoritesArray") as? [[String: Any]] ?? []
         
         favoritesArray.removeAll { name in
-            
-            return name["name"] as? String == titleLabel.text
+           
+           return name["name"] as? String == titleLabel.text
         }
         userDefaults.set(favoritesArray, forKey: "favoritesArray")
     }
@@ -83,10 +94,11 @@ class FavoritesTableViewCell: UITableViewCell {
         
         guard let name = titleLabel.text, let description = descriptionLabel.text else { return }
         var favoritesArray = userDefaults.value(forKey: "favoritesArray") as? [[String: Any]] ?? []
-        let favoritesDict = ["name": name, "description": description, "image": imageString]
+        let favoritesDict = ["name": name, "description": description, "image": imageString] //EStou contruindo o dicionário para salvar. Não está pegando a image
         favoritesArray.append(favoritesDict)
-        userDefaults.set(favoritesArray, forKey: "favoritesArray")
+        userDefaults.set(favoritesArray, forKey: "favoritesArray") // pra salvar mesmo os favoritos com a chave
+//        print(userDefaults.value(forKey: "favoritesArray"))
     }
     
-    
+ 
 }

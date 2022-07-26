@@ -5,4 +5,4 @@ Projeto final do Bootcamp de iOS Swift para mulheres promovido pela Use Mobile. 
 
 Tela Home | Tela de Cadastro | Tela de Favoritos 
 ---|---|---|
-<img src="https://github.com/Giselleandrade/Projeto_UseMobile/blob/main/Imagens/01.png"> | <img src="https://github.com/Giselleandrade/Projeto_UseMobile/blob/main/Imagens/02.png"> | <img src="https://github.com/Giselleandrade/Projeto_UseMobile/blob/main/Imagens/03.png"> 
+<img src="https://github.com/Giselleandrade/Projeto_UseMobile/blob/main/01.png"> | <img src="https://github.com/Giselleandrade/Projeto_UseMobile/blob/main/02.png"> | <img src="https://github.com/Giselleandrade/Projeto_UseMobile/blob/main/03.png"> 

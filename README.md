@@ -4,5 +4,5 @@ A API do app é resetada todo dia, sendo assim, o usuário poderá ver novas ima
 
 Tela Home | Tela de Cadastro | Tela de Favoritos 
 ---|---|---|
-<img src="https://github.com/Giselleandrade/Projeto_UseMobile/blob/main/01.png"> | <img src="https://github.com/Giselleandrade/Projeto_UseMobile/blob/main/02.png"> | <img src="https://github.com/Giselleandrade/Projeto_UseMobile/blob/main/03.png"> 
+<img src="https://github.com/Giselleandrade/App-Use-Mobile/blob/main/Imagens/01.png"> | <img src="https://github.com/Giselleandrade/App-Use-Mobile/blob/main/Imagens/02.png"> | <img src="https://github.com/Giselleandrade/App-Use-Mobile/blob/main/Imagens/03.png"> 
 
